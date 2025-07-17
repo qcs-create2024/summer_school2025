@@ -18,7 +18,11 @@ The above command create a blank virtual environment in a hidden dot-folder name
 
 ```$ source .venv/bin/activate```
 
-Installing necessary modules can be achieved by now running:
+Next, load CUDA by running:
+
+```$ module load cuda```
+
+Navigate to the directory ```pseudospecNHSW```. Installing necessary modules can be achieved by now running:
 
 ``` (.venv) $ pip install -r requirements.txt```
 
