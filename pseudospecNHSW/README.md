@@ -1,6 +1,6 @@
 # Obtaining the code
 
-To obtain a locall copy of all CREATE Summer School 2025 codes, run the following at the linux terminal in a folder where you want to store the materials:
+To obtain a local copy of all CREATE Summer School 2025 codes, run the following at the linux terminal in a folder where you want to store the materials:
 
 ```$ git clone https://github.com/qcs-create2024/summer_school2025.git```
 
