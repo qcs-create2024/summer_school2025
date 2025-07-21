@@ -5,6 +5,8 @@ CUDA_AVAILABLE = False
 try:
     output = subprocess.check_output(['nvidia-smi'], stderr=subprocess.STDOUT)
     CUDA_AVAILABLE = True
+except FileNotFoundError:
+    print("CUDA is not installed, falling back on NumPy instead of CuPy")
 except subprocess.CalledProcessError:
     print("CUDA is not available, falling back on NumPy instead of CuPy")
 
