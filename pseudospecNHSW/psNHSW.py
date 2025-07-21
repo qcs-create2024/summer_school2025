@@ -16,9 +16,8 @@ if CUDA_AVAILABLE:
     from cupyx.scipy.fft import fft2, ifft2
     from cupyx.scipy.fftpack import get_fft_plan
 else:
-    import numpy as np
+    import numpy as xp
     from scipy.fft import fft2, ifft2
-    from scipy.fftpack import get_fft_plan
 
 import matplotlib
 from matplotlib import pyplot as plt
@@ -135,7 +134,10 @@ u =-(g/f) * xp.real(ifft2(1j * ll * fft2(eta)))
 v = (g/f) * xp.real(ifft2(1j * kk * fft2(eta)))
 
 # We can use the same FFT plan for all our FFT's, since they're all the same size.
-fftplan = get_fft_plan(eta)
+if 'get_fft_plan' in globals():
+    fftplan = get_fft_plan(eta)
+else:
+    fftplan = None
 
 # Only need to '.get()' from the GPU device if we're using CuPy.
 if CUDA_AVAILABLE:
